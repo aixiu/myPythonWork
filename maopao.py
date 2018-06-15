@@ -26,7 +26,7 @@ while i > 0:
 
     for k in numlist:
         print(k, end=",")
-    print()
+
 
     i -= 1
 
