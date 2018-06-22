@@ -1,0 +1,9 @@
+2018-06-22 11:56:01,303 - DEBUG - Start of factorial(5)
+2018-06-22 11:56:01,303 - DEBUG - i is 0, total is 0
+2018-06-22 11:56:01,303 - DEBUG - i is 1, total is 0
+2018-06-22 11:56:01,304 - DEBUG - i is 2, total is 0
+2018-06-22 11:56:01,304 - DEBUG - i is 3, total is 0
+2018-06-22 11:56:01,304 - DEBUG - i is 4, total is 0
+2018-06-22 11:56:01,304 - DEBUG - i is 5, total is 0
+2018-06-22 11:56:01,304 - DEBUG - End of factorial(5)
+2018-06-22 11:56:01,304 - DEBUG - End of program
