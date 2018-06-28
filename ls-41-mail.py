@@ -15,7 +15,7 @@ try:
     msg = MIMEMultipart()
     msg['From'] =  fromAddr
     msg['To'] = toAddr
-    msg['Subject'] = 'Narcissistic Cannibal'
+    msg['Subject'] = 'Narcissistic Cannibal'  # 主题
 
     body = '''
     Dot't wanna be sly and defile you
