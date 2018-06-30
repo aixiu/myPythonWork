@@ -15,13 +15,13 @@
 # with open('heine.txt',mode='a') as heine:
 #     heine.write('\nForm Heine')
 
-# with open('heine.txt',mode='r') as heine:
-#     print(heine.read())
+with open('heine.txt',mode='r') as heine:
+    print(heine.read())
 
 
-with open('heine.txt') as h:
-    size_to_read = 100
-    f_content = h.read(size_to_read)
-    while len(f_content)> 0:
-        print(f_content,end='')
-        f_content = h.read(size_to_read)
+# with open('heine.txt') as h:
+#     size_to_read = 100
+#     f_content = h.read(size_to_read)
+#     while len(f_content)> 0:
+#         print(f_content,end='')
+#         f_content = h.read(size_to_read)
