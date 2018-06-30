@@ -16,7 +16,8 @@ LOGOFILENAME = 'liangzi.png'   # 定义水印图片
 #     nWidth, nHeight = int(w/3), int(h/3)
 
 #     nFilename = str(p.parent/'withLogo'/'smallLogo.png')  # 方法一  路径
-#     # nFilename = Path.joinpath(withLogo/smallLogo.png)   # 方法二 路径
+#     # nFilename = str(Path.joinpath('withLogo').joinpath(smallLogo.png)   # 方法二 路径
+
 #     # 生成一缩小水印文件对象，并保存在 path路径下的，withLogo目录下，名字叫samllLogo.png
 #     originalLogoIm.resize((nWidth, nHeight)).save(nFilename)  
 #     # 把缩小版水印文件对象保存为文件
