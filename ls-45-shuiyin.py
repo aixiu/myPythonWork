@@ -5,7 +5,7 @@
 from pathlib import Path
 from PIL import Image
 
-PATH = 'E:/My_python_work/toAddLogo'   # 定义文件夹路径
+PATH = './toAddLogo'   # 定义文件夹路径
 LOGOFILENAME = 'liangzi.png'   # 定义水印图片
 
 # 定义处理大水印图片的函数
@@ -39,7 +39,7 @@ imageWithLogoFolder.mkdir(777, exist_ok=True,)
 # logowidth, logoHeight, logo = resizlogo(imagePath.joinpath(LOGOFILENAME))  # 方法二
 
 # logoIm = Image.open('logo')   # 如果是缩小过的用此地址
-logoIm = Image.open('E:/My_python_work/toAddLogo/liangzi.png')
+logoIm = Image.open('./toAddLogo/liangzi.png')
 logoWidth, logoHeight = logoIm.size
 
 # 开始添加水印
