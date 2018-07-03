@@ -1,0 +1,29 @@
+{
+    "error":0,
+    "status":"success",
+    "date":"2018-07-04",
+    "results":
+    [{"currentCity":"十堰","pm25":"77",
+         "index":
+        [{"des":"天气热，建议着短裙、短裤、短薄外套、T恤等夏季服装。","zs":"热","tipt":"穿衣指数","title":"穿衣"},
+        {"des":"不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。","zs":"不宜","tipt":"洗车指数","title":"洗车"},
+        {"des":"天气转凉，空气湿度较大，较易发生感冒，体质较弱的朋友请注意适当防护。","zs":"较易发","tipt":"感冒指数","title":"感冒"},
+        {"des":"有较强降水，建议您选择在室内进行健身休闲运动。","zs":"较不宜","tipt":"运动指数","title":"运动"},
+        {"des":"紫外线强度较弱，建议出门前涂擦SPF在12-15之间、PA+的防晒护肤品。","zs":"弱","tipt":"紫外线强度指数","title":"紫外线强度"}],
+
+        
+        "weather_data":
+        [{"date":"周二 07月03日 (实时：25℃)","dayPictureUrl":"http://api.map.baidu.com/images/weather/day/xiaoyu.png",
+            "nightPictureUrl":"http://api.map.baidu.com/images/weather/night/zhongyu.png",
+            "weather":"小雨转中雨","wind":"东南风3-4级","temperature":"27 ~ 22℃"},
+            {"date":"周三","dayPictureUrl":"http://api.map.baidu.com/images/weather/day/zhongyu.png",
+            "nightPictureUrl":"http://api.map.baidu.com/images/weather/night/zhongyu.png",
+            "weather":"中雨","wind":"东北风3-4级","temperature":"28 ~ 22℃"},
+            {"date":"周四","dayPictureUrl":"http://api.map.baidu.com/images/weather/day/xiaoyu.png",
+            "nightPictureUrl":"http://api.map.baidu.com/images/weather/night/duoyun.png",
+            "weather":"小雨转多云","wind":"西南风微风","temperature":"31 ~ 22℃"},
+            {"date":"周五","dayPictureUrl":"http://api.map.baidu.com/images/weather/day/xiaoyu.png",
+            "nightPictureUrl":"http://api.map.baidu.com/images/weather/night/duoyun.png",
+            "weather":"小雨转多云","wind":"西南风微风","temperature":"32 ~ 22℃"}
+            ]}]
+}
