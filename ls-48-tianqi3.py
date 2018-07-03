@@ -12,7 +12,7 @@ while 1:
         print('您已退出天气查询系统！')
         break
     else:
-        url='http://api.map.baidu.com/telematics/v3/weather?location=%s&output=json&ak=TueGDhCvwI6fOrQnLM0qmXxY9N0OkOiQ&callback=?'%city
+        url='http://api.map.baidu.com/telematics/v3/weather?location=%s&output=json&ak=QQBpztQ8fBgON2nn3Qlrj5keExtg7dXT&callback=?'%city
         #使用requests发送请求，接受返回的结果
         response=requests.get(url)
         # print(type(response.text))
