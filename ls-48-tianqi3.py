@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 #天气预报
 # url 统一资源定位符
 #windows+r cmd 打开命令  输入pip install requests 回车
@@ -15,7 +12,7 @@ while 1:
         print('您已退出天气查询系统！')
         break
     else:
-        url='http://api.map.baidu.com/telematics/v3/weather?location=%d&output=json&ak=TueGDhCvwI6fOrQnLM0qmXxY9N0OkOiQ&callback=?'
+        url='http://api.map.baidu.com/telematics/v3/weather?location=%s&output=json&ak=TueGDhCvwI6fOrQnLM0qmXxY9N0OkOiQ&callback=?'%city
         #使用requests发送请求，接受返回的结果
         response=requests.get(url)
         # print(type(response.text))
