@@ -17,9 +17,9 @@ def url_name(city_name):
     
 
 while True:
-    print('{:=^40}'.format('欢迎进入天气查询系统'))
-    city = input('请输入您要查询的城市名称(按0退出)：')
-    if city == '0':
+    print('\n{:=^40}'.format('欢迎进入天气查询系统'))
+    city = input('请输入您要查询的城市名称 / (按 Q 退出)：').upper()
+    if city == 'Q':
         print('您已退出天气查询系统！')
         break
     else:
@@ -50,7 +50,7 @@ while True:
 
             #取出天气信息
             weather_data = results[0]["weather_data"]
-            
+
             #for循环取出每一天天气的小字典
             for weather_dict in weather_data:
                 #取出日期、天气、风级、温度
