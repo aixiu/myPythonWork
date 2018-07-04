@@ -3,7 +3,6 @@
 
 #天气预报
 #如未安装requests包请用：windows+r cmd 打开命令  输入pip install requests 回车
-#api.map.baidu.com(百度服务器地址)
 import json
 import requests
 
