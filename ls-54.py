@@ -23,7 +23,7 @@ class Employee(object):
         Employee.employeeNum += 1
     
     def infoSummary(self):
-        return '{}. {}. {}'.format(self.first + ' ' + self.surname, 
+        return '{}, {}, {}'.format(self.first + ' ' + self.surname, 
         self.salary, self.email)
 
     def raiseSalary(self):
@@ -57,7 +57,68 @@ class Employee(object):
             print('\nOn this lovely sunday...')
 
 
+class Writer(Employee):
+    raiseAmount = 1.08
+
+    def __init__(self,first, surname, salary, masterwork):
+        Employee.__init__(self, first, surname, salary)
+        self.masterwork = masterwork
+    
+    def infoSummary(self):
+        return '{}, {}, \n{}, \n{}'.format(self.first + ' ' + self.surname, 
+        self.salary, self.email, self.masterwork)
+    
+    @classmethod
+    def newFromString(cls, empstr):
+        first, surname, salary, masterwork = empstr.split('-')
+        return cls(first, surname, salary, masterwork)
+
+class leader(Employee):
+    def __init__(self,first, surname, salary, employees=None):
+        super().__init__(first, surname, salary)
+        # uper关键字也有两种意义：–调用父类的方法–调用父类的构造器
+        # 但是，super并不表示一个指向对象的引用，它只是一个特殊的关键字，
+        # 用来告诉编译器，现在要调用的是父类的方法。
+        if employees is None:
+            self.employess = []
+        else:
+            self.employess = employees
+
+    def infoSummary(self):
+        nameList = []
+        for e in self.employess:
+            nameList.append(e.first + ' ' + e.surname)
+        return '{}, {}, \n{}, \n{}\n'.format(self.first + ' ' + self.surname, 
+        self.salary, self.email, nameList)
+
+    def addEmp(self, emp):
+        if emp not in self.employess:
+            self.employess.append(emp)
+
+    def delEmp(self, emp):
+        if emp in self.employess:
+            self.employess.remove(emp)
+
+    @classmethod
+    def newFromString(cls, empstr):
+        print('\nSorry, it doesnot work\n')
+
+
 employee1 = Employee('Harry', 'Potter', 4000)
+
+empCharacter1 = Employee('Harry', 'Potter', 4000)
+empCharacter2 = Employee('Bilbo', 'Baggins', 6000)
+
+employee1 = Employee('Harry', 'Potter', 4000)
+
+empStr1 = 'J.K-Rowling-10000-Harry Potter'
+empStr2 = 'J.R.R-Tolkien-8000-The adventure of Tom Sawyer'
+
+empWriter1 = Writer('Mark Twain', 'Baggins', 6000, 'The adventure of Tom Sawyer')
+
+empLeader = leader('Julius', 'Caesar', 1200, [empCharacter1, empCharacter2])
+
+empLeaderC = leader.newFromString(empStr1)
 
 # print(employee1.infoSummary())
 
@@ -71,16 +132,27 @@ employee1 = Employee('Harry', 'Potter', 4000)
 # Employee.setRaiseAmount(1.07)
 # print(employee1.raiseAmount)
 
-empStr1 = 'J.K-Rowling-10000'
-empStr2 = 'J.R.R-Tolkien-8000'
 
-employee3 = Employee.newFromString(empStr1)
+
+empWriter3 = Writer.newFromString(empStr1)
 # print(employee3.infoSummary())
+# print(empWriter3.infoSummary())
+# print(empWriter1.raiseAmount)
 
-from datetime import date, timedelta
+# print(empLeader.infoSummary())
+print(empLeader.infoSummary())
 
-day = date.today() + timedelta(days= 0)
-Employee.whatDay(day)
+empLeader.addEmp(empWriter1)
+
+print(empLeader.infoSummary())
+
+empLeader.delEmp(empWriter1)
+
+print(empLeader.infoSummary())
+# from datetime import date, timedelta
+
+# day = date.today() + timedelta(days= 0)
+# Employee.whatDay(day)
 
 
 
