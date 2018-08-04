@@ -63,10 +63,63 @@
 
 # 实例三
 
-a_string = "This is a global variable"
-def foo():
-    a_string = 'test'
-    print(a_string) # 1
+# a_string = "This is a global variable"
+# def foo():
+#     a_string = 'test'
+#     print(a_string) # 1
+# foo()
+
+# print(a_string)
+
+# 实例四
+
+# def outer():
+#     x = 1
+#     def inner():
+#         print(x) # 1
+#     return inner
+# foo = outer()
+
+# foo()
+
+# 实例五  装饰器
+# def outer(some_func):
+#     def inner():
+#         print('before some_func')
+#         ret = some_func()
+#         return ret + 1
+#     return inner
+
+# def foo():
+#     return 1
+
+# foo = outer(foo)
+
+# foo()
+
+# 实例六
+
+# class Coordinate(object):
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#     def __repr__(self):
+#         return "Coord: " + str(self.__dict__)
+
+# def add(a, b):
+#     return Coordinate(a.x + b.x, a.y + b.y)
+# def sub(a, b):
+#     return Coordinate(a.x - b.x, a.y - b.y)
+
+# one = Coordinate(100, 200)
+# two = Coordinate(300, 200)
+
+# print(add(one, two))
+
+# def add(*args)
+
+def foo(**aa):
+    print(aa)
 foo()
 
-print(a_string)
+foo(x =1 , y = 2)
