@@ -71,3 +71,42 @@
 
 
 # 实例装饰器
+
+# def outer(func):
+#     def inner(username):
+#         print("认证成功！")
+#         result = func(username)
+#         print("日志添加成功")
+#         return result
+#     return inner
+
+# # 基础平台部门开发了上百个函数
+# @outer
+# def f1(name):
+#     print('{}正在连接数据接口'.format(name))
+
+
+# #各分别调用
+# f1('jack')
+
+
+# def deco(func):     
+#     print("1111")  
+#     func()  
+#     print("2222")
+#     return func
+ 
+def deco(func):  
+    def _deco():  
+        print("1111")  
+        func()  
+        print("2222")  
+        # 不需要返回func，实际上应返回原函数的返回值  
+    return _deco  
+ 
+@deco  
+def myfunc():  
+    print("333")  
+    return 'ok'  
+  
+myfunc()

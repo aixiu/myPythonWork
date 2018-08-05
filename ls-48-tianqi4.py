@@ -1,5 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# AK码申请方法：
+# http://lbsyun.baidu.com/apiconsole/key
+# 打开上边网站  确保先登录进去
+
+# 应用名称：随便写，自己分得清就行
+# 重点：应用类型，选择，微信小程序
+
+# APP ID：  如果不想限制，写个 * 就行了，详情可以看下边的说明文字。
+# 点提交。
+
 
 #天气预报
 #如未安装requests包请用：windows+r cmd 打开命令  输入pip install requests 回车
