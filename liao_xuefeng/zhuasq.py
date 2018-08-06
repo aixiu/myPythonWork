@@ -96,6 +96,9 @@
 #     print("2222")
 #     return func
  
+
+
+
 def deco(func):  
     def _deco():  
         print("1111")  
