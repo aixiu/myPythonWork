@@ -78,5 +78,10 @@ now('aixiu')
 
 #  详解
 # 和两层嵌套的decorator相比，3层嵌套的效果是这样的：
-# 首先执行log('execute')，返回的是decorator函数，再调用返回的函数，参数是now函数，
+# 首先执行log('execute')，返回的是decorator函数，
+# 此时相当于 由 @log('execute')变成为 @ decorator  (此时差不多和不带变量的装饰器差不多了)
+# 再调用返回的函数，参数是now函数，
 # 返回值最终是wrapper函数。
+
+
+# 视频地址：  http://edu.51cto.com/center/course/lesson/index?id=89993    20分钟左右
