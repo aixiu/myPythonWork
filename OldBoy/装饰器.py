@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# def login(func):
-#     def inner(namehaha):
-#         print('{:=^30}'.format('密码验证成功'))
-#         return func(namehaha)
-#     return inner
+def login(func):
+    def inner(namehaha):
+        print('{:=^30}'.format('密码验证成功'))
+        return func(namehaha)
+    return inner
 
-# @login
-# def home(name):
-#     print('Welcome [{}] to Home page'.format(name))    
+@login
+def home(name):
+    print('Welcome [{}] to Home page'.format(name))    
 
-# # home = login(home)
-# home('aixiu')
+# home = login(home)
+home('aixiu')
 
 
 # 调用新的home()相当于调用inner()，所以inner要接收home传过来的实参'aixiu'，
