@@ -9,7 +9,7 @@ class Warriors:
 
     def __init__(self, name, Kungfu, attkMax, defendMax):
         self.name = name
-        self.energyValue = Kungfu
+        self.energyValue = Kungfu  #重新给类的name变量赋值，并可以全局调用
         self.attkMax = attkMax
         self.defendMax = defendMax
 

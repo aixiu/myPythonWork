@@ -20,6 +20,7 @@
 
 # 实例说明
 class Programer(object):
+    '这是一个帮助信息'   #类文档字符串
     hobby = 'Play Computer'
 
     def __init__(self, name, age, weight):
@@ -41,5 +42,4 @@ if __name__ == '__main__':
 # 函数是直接用函数名调用的，方法是类的一部分，依附于一个类，
 
 
-a = input('输入用户名： ')
-print('你好{}'.format(a))
+print(Programer.__doc__)
