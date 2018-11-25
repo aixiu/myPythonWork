@@ -16,12 +16,20 @@
 
 class Person(object):
     x = 'abc'
-    def __init__(self, name):
+    def __init__(self, name, age = 18):
         self.name = name
+        self.y = age
+        # 注意，__init__()  方法不能有返回值，也就是只能是None 
+
+    def show(self):
+        print(self.name, self.y)
 
 a = Person('aixiu')
-b = Person('ynxiu')
+b = Person('ynxiu', 27)
 
 print(a.name, b.name)
 print(a.x, b.x)
 
+print(a.y, b.y)
+
+a.show()
