@@ -33,7 +33,7 @@ for i in range(2, length):  # 从第二个数开始
     if nums[j] > nums[0]:  # 大数向右移，找到插入位置
         while nums[j] > nums[0]:
             nums[j+1] = nums[j]   # 依次右移
-            j -=1
+            j -= 1
             # count_swap += 1
         nums[j+1] = nums[0]  #将哨兵插入，注意插入在右侧要+1
 print(nums, count_iter)
