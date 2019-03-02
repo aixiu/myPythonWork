@@ -142,3 +142,12 @@ fun()
 
 # 下面求斐波那契数列函数有一定问题，比如n一开始就是负数，如何修正
 # n表示求第n个数子的斐波那契数列的值
+
+def fib(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    return fib(n-1) + fib(n-2)
+
+print(fib(5))
