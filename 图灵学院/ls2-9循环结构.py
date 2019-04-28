@@ -135,3 +135,26 @@ for i in range(1,10):
         # else：
         #     语句块2
 
+# 案例 1
+# 如果说年利率是6.7%，本利是每年翻滚， 则多少年后本钱会翻倍
+
+benqian = 10000
+year = 0 # 存放需要翻本的年数
+
+while benqian < 20000:
+    benqian *= (1 + 0.067)
+    year += 1
+
+print(year)
+
+# 案例 2
+# 如果拿到的钱翻倍，则用print庆祝一下
+benqian = 100000
+year = 0
+while benqian < 200000:
+    benqian = benqian * (1+0.067)
+    year += 1 # year = year + 1
+    print("第 {0} 年拿了 {1} 块钱".format(year, benqian))
+else:
+    print("大爷的，终于翻倍了，10多年呀")
+    print("当年10万可以盖个房子，现在儿子结婚，20万可以给他盖个厨房了")
