@@ -36,3 +36,13 @@ print(pp)
 
 # help 负责随时为您提供帮助
 help(print)
+
+
+# 九九乘法表
+    # version 1.0
+for o in range(1, 10):  # 控制外循环，从1到9
+    for i in range(1, o+1): # 内循环，每次从第一个数开始打始，打印到跟行数相同的数量
+        print(o * i, end=" ") 
+    print()
+
+    
