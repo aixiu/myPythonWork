@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# 函数宝义
+# 函数定义
 def func():
     print('我爱王晓静')
     print('我想你了')
@@ -42,7 +42,12 @@ help(print)
     # version 1.0
 for o in range(1, 10):  # 控制外循环，从1到9
     for i in range(1, o+1): # 内循环，每次从第一个数开始打始，打印到跟行数相同的数量
-        print(o * i, end=" ") 
+        print(o * i, end=' ') 
     print()
 
-    
+
+    # version 2.0
+for i in range(1, 10):
+    for j in range(1, i+1):        
+        print('{} * {} = {}  '.format(j, i ,i*j), end='')
+    print()
