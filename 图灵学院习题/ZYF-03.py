@@ -44,5 +44,6 @@ while times:
     else:
         print('你输的不是数字！重来。')
 
-print('游戏结束')
+else:
+    print('游戏结束')
 
