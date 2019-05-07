@@ -30,3 +30,21 @@ for i in range(treeheight + 1):
         print('*',end=' ')
     print()
 
+
+# 打印正三角形
+    #     *
+    #    * *
+    #   * * *
+    # * * * * *
+
+# i-for 控制行
+# j-for 控制列
+
+for i in range(6):
+    # 总体思路是，先打印空格，再打印星星。
+    for j in range(6 - i):
+        print('',end=' ')
+    for m in range(i + 1):
+        print('*', end=' ')
+    print()
+
