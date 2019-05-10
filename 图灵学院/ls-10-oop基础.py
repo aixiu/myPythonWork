@@ -37,6 +37,20 @@
         # 必须用 class 关键字
         # 类由属性和方法构成，其他不允许出现
         # 成员属性定义可以直接使用。
+    
+    # 实例化类
+        # 变量 = 类名()  实例化了一个对象
+
+    # 访问对象成员
+        # 使用点操作符
+            # obj.成员属性名称
+            # obj.成员方法
+
+    # 可以通过默认内置变量检查类和对象所有的成员
+        # 对象所有成员检查
+            # obj.__dict__   dict 前后两个下划线
+        # 类所有的成员
+            # class_name.__dict__  dict 前后两个下划线
 
 '''
 定义一个学生类，用来形容学生
@@ -51,18 +65,22 @@ class Student():
 mingyue = Student()
 
 # 再定一个类，用来描述听 python 的学生
-class PythonStudunt(self):
+class PythonStudunt(object):
     # 用 None 给不确定的值赋值
     name = None
     age = 18
     course = 'python'
 
-    def doHomework():
+    def doHomework(self):
         print('I 在做作业')
 
         # 推荐在函数末尾使用 return 语句
         return None
 
+# 实例化 一个叫 yueyue 的学生，是一个具体的人
+yueyue = PythonStudunt()
+print(yueyue.name)
+print(yueyue.age)
 
-
-
+# 注意成员函数的调用没有传递进入参数
+yueyue.doHomework()
