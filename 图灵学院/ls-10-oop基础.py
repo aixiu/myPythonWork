@@ -84,3 +84,11 @@ print(yueyue.age)
 
 # 注意成员函数的调用没有传递进入参数
 yueyue.doHomework()
+
+
+# 类和对象的成员分析
+    # 类和对象都可以存储成员，成员可以归类所有，也可以归对象所有
+
+print(PythonStudunt.__dict__)
+print(yueyue.__dict__)
+print(yueyue.name)
