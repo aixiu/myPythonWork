@@ -139,4 +139,41 @@ A.say(B)
     # 封装
     # 继承
     # 多态
+
+# 封装
+    # 封装就是对对象的成员进行访问限制
+    # 封装的三个级别：
+        # 公开， public
+        # 受保护的，protected
+        # 私有的，private
+        # public, private, protedted 不是关键字
+
+    # 判断对象的对置
+        # 对象内部
+        # 对象外部
+        # 子类中
+
+    # 私有
+        # 私有成员是最高级别的封装，只能在当前类或对象中访问
+        # 在成员前面添加两个下划线即可
+
+# 私有变量案例
+class Person(object):
+    # name是共有的成员
+    name = 'liuying'
+    # __age 就是私有成员
+    __age = 18
+
+p = Person()
+# name 是公有变量
+print(p.name)
+# __age 是私有变量
+# 会报错，提示没有这个变量
+print(p.__age)
+
+        # python 的私有不是真私有，是一种叫 name mangling 的改名策略
+        # 可以使用： 对象._classname_attr  访问
+    
+# name mangling 技术
+print(p._Person__age)
     
