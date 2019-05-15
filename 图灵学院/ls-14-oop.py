@@ -190,3 +190,73 @@ class Person(object):
 p = Person()
 print(p.__dict__)
 p.age = 18
+
+# 运算分类相关麻木方法
+    # __gt__：进行大于判断的时候触发的函数
+        # 参数：
+            # self
+            # 第二个参数是第二个对象
+            # 返回值可以是任意值，推荐返回布尔值
+
+# __gt__案例
+
+class Studen(object):
+    def __init__(self, name):
+        self._name = name
+
+    def __gt__(self, obj):
+        print('哈哈，{}会比{}大吗？'.format(self._name, obj._name))
+        return self._name > obj._name
+
+# 字符串的比较是按什么规则
+stu1 = Studen('one')
+stu2 = Studen('two')
+
+print(stu1 > stu2)
+
+
+# 类和对象的三种方法
+    # 实例方法
+        # 需要实例化对象才能使用的方法
+    # 静态方法：
+        # 不需要实例化，通过类直接访问
+    # 类方法
+        # 不需要实例化
+
+
+# 三种方法的案例
+
+class Person(object):
+    # 实例方法
+    def eat(self):
+        print(self)
+        print('Eating....')
+
+    # 类方法
+    # 第一个参数，一般命名为 cls,区别于 self
+    @classmethod
+    def play(cls):
+        print(cls)
+        print('Playing....')
+
+
+    # 静态方法
+    # 不需要第一个参数表示自身或者类
+    @staticmethod
+    def say():
+        print('Saying...')
+
+yueyue = Person()
+
+# 实例方法访问
+yueyue.eat()
+
+# 类方法访问
+Person.play()
+yueyue.play()
+
+# 静态方法访问
+Person.play()
+yueyue.play()
+
+
