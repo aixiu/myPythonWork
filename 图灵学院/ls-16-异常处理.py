@@ -87,3 +87,133 @@ except:
     print('你输的是什么玩意儿')
     # exit 是退出程序的意思
     exit()
+
+
+# 简单异常安全
+# 给出提示信息
+try:
+    num = int(input('Plz input you nuber:'))
+    rst = 100/num
+    print('计算结果是: {}'.format(rst))
+
+# 捕获异常后，把异常实例化，出息信息会在实例里
+# 注意以下写法
+# 以下语句是捕获ZeroDivisionError异常并实例化实例e
+except ZeroDivisionError as e:
+    print('你输的是什么玩意儿')
+    print(e)
+    help(e)
+    # exit 是退出程序的意思
+    exit()
+
+
+
+# 简单异常安全
+# 给出提示信息
+try:
+    num = int(input('Plz input you nuber:'))
+    rst = 100/num
+    print('计算结果是: {}'.format(rst))
+
+# 如果是多种Error的情况下
+# 需要把起越具体的错误，越往前放
+# 在异常类继承关系中，越是子类的异常，越要往前放
+# 越是父类的导演，越要往后放
+
+# 在处理异常的时候，一旦拦截到开支一个异常，则不在继续往下查看，直接进行下一个
+# 代码，即有 finally 则执行 finally语句块，否则就执行下一个大的语句。
+except ZeroDivisionError as e:
+    print('你输的是什么玩意儿')
+    print(e)
+    # exit 是退出程序的意思
+    exit()
+except NameError as e:
+    print('名字起错了')
+    print(e)
+
+except AttributeError as e:
+    print('好像属性有问题')
+    print(e)
+    exit()
+
+# 所有异常都是继承自 Exception 
+# 如果写上下面这句话，任何异常都会拦截住
+# 而且，下面这句话一定是最后一个exception
+except Exception as e:
+    print('我也不知道就出错了')
+    print(e)
+else:
+    print('结束了，这是结果')
+
+
+# 用户手动引发异常
+    # 某些情况，用户希望自己引发一个异常的时企业民，可以使用
+    # raise 关键字来引发异常
+
+
+# raise 案例1
+try:
+    print('我爱XXX')
+    print(3.1415926)
+
+    # 手动引发一个异常
+    #　注意写法：　raise ErrorClassName
+    raise ValueError
+    print('还没写完')
+except NameError as e:
+    print('NameError')
+except ValueError as e:
+    print('ValueError')
+except Exception as e:
+    print('有异常')
+finally:
+    print('有没有异常我都要执行')
+
+
+# raise 案例2
+# 自己定义异常
+# 需要注意： 自定义异常必须是系统异常的子类
+
+class DanaValueError(ValueError):
+    pass
+
+try:
+    print('我爱XXX')
+    print(3.1415926)
+
+    # 手动引发一个异常
+    #　注意写法：　raise ErrorClassName
+    raise DanaValueError
+    print('还没写完')
+except NameError as e:
+    print('NameError')
+except ValueError as e:
+    print('ValueError')
+except Exception as e:
+    print('有异常')
+finally:
+    print('有没有异常我都要执行')
+
+
+
+# else 语句案例
+try:
+    num = int(input('Plz input you nuber:'))
+    rst = 100/num
+    print('计算结果是: {}'.format(rst))
+except Exception as e:
+    print('ExCEPTION')
+
+else:
+    print('NO Exception')
+finally:
+    print('反正我会执行')
+
+
+# 关于自定义异常
+    # 只要是 raise 异常，则推荐自定义异常
+    # 在自定义异常的时候，一般包含以下内容：
+        # 自定义发生异常的异常代码
+        # 自定义发生异常后的问题提示
+        # 自定义发生异常的行数
+    # 最终的目的是，一旦发生异常，方便程序员快速定位错误现场
