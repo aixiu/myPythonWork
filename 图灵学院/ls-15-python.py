@@ -190,4 +190,3 @@ class Teacher(object, metaclass=TulingMetaClass):
 
 t = Teacher()
 t.id
-

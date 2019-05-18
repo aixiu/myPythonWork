@@ -58,8 +58,11 @@ def move(n, a, b, c):
     if n == 1:
         print('move', a, '-->', c)
     else:
+        # 把n-1个盘子，从a塔借助于c塔，挪到b塔上去
         move(n-1, a, c, b)
+        # 此时，A塔上只有一个盘子，因为 n = 1 所以执行上边的 if 语句，直接将A挪到c塔上去
         move(1, a, b, c)
+        # 把n-1个盘子，从b塔，借助于a塔，挪到c塔上去
         move(n-1, b, a, c)
 
 move(4, 'A', 'B', 'C')
