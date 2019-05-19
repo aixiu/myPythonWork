@@ -184,7 +184,7 @@ class Person(object):
 
         # 下面语句会导致问题，死循环
         # self.name = value
-        # 为了避免死循环，规定统一敞露用父类魔法函数
+        # 为了避免死循环，规定统一调用父类魔法函数
         super().__setattr__(name, value)
 
 p = Person()
