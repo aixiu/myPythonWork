@@ -22,16 +22,16 @@ print('总共用时 {:.2f} 秒'.format(endTime - startTime))
 # 例二
 # time.sleep()  # 暂停给定秒数后执行程序。该参数可以是一个浮点数来表示一个更精确的睡眠时间。
 
-# for i in range(3):
-#     print('aixiu')
-#     time.sleep(1)
-#     print('aixiu')
-#     time.sleep(1)
+for i in range(3):
+    print('aixiu')
+    time.sleep(1)
+    print('aixiu')
+    time.sleep(1)
 
 # 例三
 
-# now = time.time()
-# print(now)
-# print(round(now, 2))
-# print(round(now, 4))
-# print(round(now))
+now = time.time()
+print(now)
+print(round(now, 2))
+print(round(now, 4))
+print(round(now))
