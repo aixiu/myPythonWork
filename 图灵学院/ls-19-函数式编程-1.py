@@ -37,3 +37,67 @@ def printA():
     print('AAAAA')
 
 printA()
+
+
+# lambda表达式的用法
+    # 1、以lambda 开
+    # 2、紧跟一定的参数（如果有的话）
+    # 3、参数后用冒号和表达式主题隔开
+    # 4、只是一个表达式，所以没有return
+
+# 计算一个数字的100倍数
+stm = lambda x: 100 * x
+# 使用上跟函数调用一样
+stm(25)
+
+
+stm2 =  lambda x,y,z: x + y * 10 + z * 100
+stm2(4, 5, 6)
+
+# 高阶函数
+    # 把函数作为参数使用的函数，叫高阶函数
+
+# 变量可以赋值
+a = 100
+b = a
+
+# 函数名称就是一个变量
+def funA():
+    print('In FunA')
+
+funB = funA
+funB()
+
+# 以上代码得出的结论：
+    # 函数名称是变量
+    # funB 和 funA 只是名称不一样而已
+    # 既然函数名称是变量，则应可以被当做参数传入另一个函数
+
+# 高阶函数例子
+    # funA 是普通函数，返回一个传入数字的100倍数字
+
+def funA(n):
+    return n * 100
+
+    # 再写一个函数，把传入参数 乘以300倍
+
+def funB(n):
+    # 最终结果是想返回300n
+    return funA(n) * 3
+
+print(funB(9))
+
+# 用高阶函数来写
+def funC(n, f):
+    return f(n) * 3
+
+print(funC(9, funA))
+
+# 比较funC 和 funB ，显然 funC 的写法要优于 funB
+    # 例如：
+def funD(n):
+    return n * 10
+
+# 需求变更，需要把 n放大三十陪，此时 funB则无法实现，因为代码写死
+
+print(funC(9, funD))
