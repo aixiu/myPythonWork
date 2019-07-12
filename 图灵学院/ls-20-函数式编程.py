@@ -207,7 +207,7 @@ import time
 def printTime(f):
     def wrapper(*args, **kwargs):
         print('Time: ', time.ctime())
-        return f()
+        return f(*args, **kwargs)
     return wrapper
 
 # 上边定义了装饰器，使用的时候需要用到@ 此符号是python的语法糖
