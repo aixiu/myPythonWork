@@ -1,0 +1,19 @@
+DEBUG:root:This is a debug log.
+INFO:root:This is a info log.
+WARNING:root:This is a warning log.
+ERROR:root:This is a error log.
+CRITICAL:root:This is a critical log.
+DEBUG:root:This is a debug log.
+INFO:root:This is a info log.
+WARNING:root:This is a warning log.
+ERROR:root:This is a error log.
+2019-07-20 17:11:14,223=====DEBUG++++++This is a debug log.
+2019-07-20 17:11:14,223=====INFO++++++This is a info log.
+2019-07-20 17:11:14,224=====WARNING++++++This is a warning log.
+2019-07-20 17:11:14,224=====ERROR++++++This is a error log.
+2019-07-20 17:11:14,224=====CRITICAL++++++This is a critical log.
+2019-07-20 17:11:14,224=====DEBUG++++++This is a debug log.
+2019-07-20 17:11:14,224=====INFO++++++This is a info log.
+2019-07-20 17:11:14,224=====WARNING++++++This is a warning log.
+2019-07-20 17:11:14,224=====ERROR++++++This is a error log.
+2019-07-20 17:11:14,224=====CRITICAL++++++This is a critical log.
