@@ -1,4 +1,19 @@
-<?xml version='1.0' ?>
-<student>
+<?xml version='1.0' encoding='utf-8' ?>
 
-</student>
+<school tyep='online' loc='hubei'>
+    <student type='web'>
+        <score>score&gt;80</score>
+        <name>aixiu</name>
+        <age>22</age>
+    </student>
+
+    <student>
+        <name>aixiu</name>
+        <age>22</age>
+    </student>
+
+    <student>
+        <name>aixiu</name>
+        <age>22</age>
+    </student>
+</school>
