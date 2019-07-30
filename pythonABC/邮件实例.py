@@ -7,6 +7,7 @@ def mail(user):
     ret = True
     try:
         msg = MIMEText("自学python，一直在在看武老师的视频，谢谢。", "plain", "utf-8")
+        # MIME子类型，此案例我们用 plain 表示，text类型
         msg["From"] = formataddr(["叶叶菜","shendlax@126.com"])
         msg["To"] = formataddr(["菜菜","4815563@qq.com"])
         msg["Subject"] = "感谢信"
