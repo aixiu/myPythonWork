@@ -42,10 +42,10 @@ headers = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36",
 }
 # 构造一个 Request的实例
-req = request.Request(url=baseurl, data=data, headers=headers)
+req = request.Request(baseurl, headers=headers)
 
 # 因为已经构造了一个Request,的请求实例，则所有的请求信息都可以封装在Request 实例中。
-rsp = request.urlopen(req)
+rsp = request.urlopen(req, data=data)
 
 json_data = rsp.read().decode('utf-8')
 print(type(json_data))

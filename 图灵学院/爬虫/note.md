@@ -61,7 +61,7 @@
 
 - request.date 的使用
   - 访问网络的两种方法
-    - get: 
+    - get:
       - 利用参数给服务器传递信息
       - 参数为 dict ，然后用 parse 编码
       - 案例V4
@@ -93,7 +93,6 @@
     - HTTPError 是对应的HTTP请流动的返回码错误， 如果返回错误码是400以上的，则引发HTTPError
     - URLError对应一般是网络出现问题，包括URL问题
     - 关系区别：OSError-URLError-HTTPError
-
 
 - UserAgent
   - UserAgent: 用户代理，简秒UA， 属于heads 的一部分，服务器通过UA来判断访问者身份
@@ -159,4 +158,63 @@ Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Geck
 - session的存放位置
   - 存在服务器端
   - 一般情况，session是放在内存中或者数据库中。
-  
+  - 没有cookie登录  案例v11, 可以看到，没有使用cookie 则反馈网页为未登录状态。
+
+- 使用 cookie 登录
+  - 直接把cookie 复制下来，然后手动放入请求头，案例 v12
+  - http 模块包含一些关于 cookie 的模块，能过他们我们可以自动使用cookie
+
+    - Cookiejar
+      - 管理存储cookie, 向传出的 https 请求，添加 cookie
+      - cookie，存储在内存中， Cookiejar 实例回收后  cookie将消失
+
+    - FileCookiejar(filename, delayload=None, policy=None)：
+      - 使用文件管理Cookie
+      - filename是保存Cookie的文件
+
+    - MozillaCookiejar(filename, delayload=None, policy=None)：
+      - 创建与 mocilla 浏览器cookie.txt兼容的FileCookiejar 实例
+
+    - LwpCookiejar(filename, delayload=None, policy=None)：
+      - 创建与libwww-perl 标准兼容的 Set-Cookie3格式的 FileCookiejar 实例
+
+    - 他们的关系是 Cookiejar --> FileCookiejar --> MozillaCookiejar & LwpCookiejar
+
+  - 利用 Cookiejar 访问人人网，案例V13
+    - 自动使用cookie登录，大致流程：
+    - 打开登录页面后自动通过用户名密码登录
+    - 自动提取反馈回来的cookie
+    - 利用提取的cookie登录隐私页面
+
+  - handler 是Handler的实例，常用的参看代码
+    - 用来处理复杂请求
+
+      ```txt
+      # 生成 cookie的管理器
+      cookie_handler = request.HTTPCookieProcessor(cookie)
+
+      # 创建http请求管理器
+      http_handler = request.HTTPHandler()
+
+      # 创建https请求管理器
+      https_handler = request.HTTPSHandler()
+      ```
+
+  - 创建handler后，使用opener打开，打开后相应的业务由相应的hanlder处理
+
+    ```txt
+    # .urlopen()函数不支持验证、cookie或者其它HTTP高级功能。要支持这些功能，必须使用build_opener()函数创建自定义Opener对象。
+    opener = request.build_opener(http_handler, https_handler, cookie_handler)
+    ```
+
+  - cookie作为一个变量，打印出来，案例 v14
+    - cookie的属性
+      - name: 名称
+      - value: 值
+      - domain: 可以访问此cookie 的域名
+      - path: 可以访问此cookie的页面路径
+      - exires: 过期时间
+      - size: 大小
+      - Http字段
+
+  - cooke的保存-FileCookiejar 案例v15
