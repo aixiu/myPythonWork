@@ -4,7 +4,7 @@
 from urllib import request, parse
 from http import cookiejar
 
-# 创建filecookiejar的实例
+# 创建 MozillaCookieJar 的实例
 filename = 'cookie.txt'
 cookie = cookiejar.MozillaCookieJar(filename)
 

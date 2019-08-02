@@ -1,0 +1,18 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.renren.com	TRUE	/	FALSE	1595821028	_de	806D978CF17762997DE1374C26B60001
+.renren.com	TRUE	/	FALSE	1722397028	anonymid	jytk4ajz-chjuyw
+.renren.com	TRUE	/	FALSE		first_login_flag	1
+.renren.com	TRUE	/	FALSE		id	882859385
+.renren.com	TRUE	/	FALSE	1567309028	ln_hurl	http://head.xiaonei.com/photos/0/0/men_main.gif
+.renren.com	TRUE	/	FALSE	1567309028	ln_uact	4815563@qq.com
+.renren.com	TRUE	/	FALSE		loginfrom	null
+.renren.com	TRUE	/	FALSE		p	c4d7f82a65ec2cff5868ffe319fc296a5
+.renren.com	TRUE	/	FALSE		societyguester	fed6d648e0c3cfa4ccd9bf21d2c77cc45
+.renren.com	TRUE	/	FALSE		t	fed6d648e0c3cfa4ccd9bf21d2c77cc45
+.renren.com	TRUE	/	FALSE		ver	7.0
+.renren.com	TRUE	/	FALSE		xnsid	af98e978
+.renren.com	TRUE	/xtalk/	FALSE		t	4d93e1a7cd1df796e0fae578650985f9
+www.renren.com	FALSE	/	FALSE		JSESSIONID	abcgtMsCmuB8V8YJXzqXw

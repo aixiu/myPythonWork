@@ -217,4 +217,8 @@ Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Geck
       - size: 大小
       - Http字段
 
-  - cooke的保存-FileCookiejar 案例v15
+  - cookie的保存-FileCookiejar 案例 v15
+  - cookier的读取, 案例 v16
+
+- SSL
+  - SSL是证书就是指遵守SSL安全阶层协议的服务器数字证书
