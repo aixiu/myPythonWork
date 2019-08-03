@@ -10,7 +10,7 @@ from urllib import request, parse
 
 if __name__ == '__main__':
     
-    url = 'https://www.baidu.com/s?'
+    url = 'http://www.baidu.com/s?'
     wd = input('请输入关键字：')
     
     # 要想使用 date ，需要使用字典结构

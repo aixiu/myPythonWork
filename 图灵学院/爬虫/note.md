@@ -98,36 +98,36 @@
   - UserAgent: 用户代理，简秒UA， 属于heads 的一部分，服务器通过UA来判断访问者身份
   - 常见的UA值，使用的时候可以直接复制粘贴，也可以用浏览器访问访问的时候抓包
 
-```html
-常见的UA值，使用的时候可以直接复制粘贴，也可以用浏览器访问的时候抓包：
-1.Android
+  ```html
+  常见的UA值，使用的时候可以直接复制粘贴，也可以用浏览器访问的时候抓包：
+  1.Android
 
-Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19
+  Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19
 
-Mozilla/5.0 (Linux; U; Android 4.0.4; en-gb; GT-I9300 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+  Mozilla/5.0 (Linux; U; Android 4.0.4; en-gb; GT-I9300 Build/IMM76D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
 
-Mozilla/5.0 (Linux; U; Android 2.2; en-gb; GT-P1000 Build/FROYO) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+  Mozilla/5.0 (Linux; U; Android 2.2; en-gb; GT-P1000 Build/FROYO) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
 
-2.Firefox
+  2.Firefox
 
-Mozilla/5.0 (Windows NT 6.2; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0
+  Mozilla/5.0 (Windows NT 6.2; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0
 
-Mozilla/5.0 (Android; Mobile; rv:14.0) Gecko/14.0 Firefox/14.0
+  Mozilla/5.0 (Android; Mobile; rv:14.0) Gecko/14.0 Firefox/14.0
 
-3.Google Chrome
+  3.Google Chrome
 
-Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36
+  Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36
 
-Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19
+  Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19
 
-4.iOS
+  4.iOS
 
-Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3
+  Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3
 
-Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A101a Safari/419.3
+  Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A101a Safari/419.3
 
-链接：https://www.jianshu.com/p/844b4b674ee5
-```
+  链接：https://www.jianshu.com/p/844b4b674ee5
+  ```
 
 - 设置UA可以通过两种方式：
   - heads
@@ -189,16 +189,16 @@ Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Geck
   - handler 是Handler的实例，常用的参看代码
     - 用来处理复杂请求
 
-      ```txt
-      # 生成 cookie的管理器
-      cookie_handler = request.HTTPCookieProcessor(cookie)
+    ```txt
+    # 生成 cookie的管理器
+    cookie_handler = request.HTTPCookieProcessor(cookie)
 
-      # 创建http请求管理器
-      http_handler = request.HTTPHandler()
+    # 创建http请求管理器
+    http_handler = request.HTTPHandler()
 
-      # 创建https请求管理器
-      https_handler = request.HTTPSHandler()
-      ```
+    # 创建https请求管理器
+    https_handler = request.HTTPSHandler()
+    ```
 
   - 创建handler后，使用opener打开，打开后相应的业务由相应的hanlder处理
 
@@ -222,3 +222,37 @@ Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Geck
 
 - SSL
   - SSL是证书就是指遵守SSL安全阶层协议的服务器数字证书
+  - 美国网景公司开发
+  - CA（CertifacateAuthority）是数字证书认证中心，是发放，管理，废除数字证书的收信人的第三方机构
+  - 遇到不信任的SSL证书，需要单独处理。案例V17
+
+- js加密
+  - 有的反爬虫策略采用JS对需要传办理的数据进行加密处理（通常是取MD5值）
+  - 经过加密，传输的就是密文，但是
+  - 加密函数或者过程一定是在浏览器完成，就就是一定会把代码（js代码）暴露给使用者
+  - 通过阅读加密算法，就可以模拟出加密过程，从而达到破解。
+  - 过程参看案例V18,v19
+  - 过程比较啰嗦， 笔记比较少。
+
+- ajax
+  - 异步请求
+  - 一定会有url，请求方法，可能有数据
+  - 一般使用 json 格式
+  - 案例，爬取豆瓣电影，案例V20
+
+## Requests - 献给人类
+
+- HTTP for Humans ， 更简洁更友好
+- 继承了urllib 的甩的特征
+- 底层使用的是 urllib3
+- 开源地址: https://github.com/requests/requests
+- 中文文档: http://docs.python-requests.org/zh_CN/latest/index.html
+- 安装： pip install requests
+- get 请求
+  - requests.get()
+  - requests.request('get', url)
+  - 可以带有 headers和parmas参数
+  - 案例V21
+
+- get 返回内容
+  - 案例V22
