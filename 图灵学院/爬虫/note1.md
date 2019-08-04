@@ -256,3 +256,73 @@
 
 - get 返回内容
   - 案例V22
+
+- post
+  - rsp = requests.post(url, data=data)
+  - 参看案例V23
+  - data, headers 要求 dict类型
+-proxy
+  - 使用方法：
+
+    ```python
+    proxies = {
+      'http':'address of proxy'
+      'https':'address of proxy'
+    }
+
+    rsp = requests.request('get', 'http:xxxx', proxies=proxies)
+    ```
+
+  - 代理有可能报错，如果使用人数多，考虑安全问题可能会被强行关闭
+
+- 用户验证
+  - 代理验证
+    - 可能需要使用 http basic Auth, 可以这样
+    - 格式为  用户名:密码@代理地址:端口  例如：
+      - proxy = {"http":"china:12355@192.168.0.1:444"}
+      - rsp = requests.get('http://baidu.com', proxies=proxy)
+
+- web客户端验证
+  - 如果遇到web客户端验证，需要添加 auth= （用户名,密码）
+  - 例如：
+    - autu = ('test', '123456') 授权信息
+    - rsp = requests.get('http://baidu.com', auth=auth)
+
+- cookie
+  - requests 可以自动处理 cookie信息 例如：
+    - rsp = requests.get('http://baidu.com')
+    - 如果对方服务器给传过来 cookie信息，则可以通过反馈的cookie 属性得到
+    - 反回一个cookiejar的实例
+    - cookiejar = rsp.cookies
+    - 可以将 cookiejar转换成字典
+    - > cookedict = requests.utils.dict_from_cookiejar(cookiejar)
+
+- session
+  - 跟服务器端 session不是一个东西
+  - 模拟一次会话，从客户端浏览器链接服务器开始，到客户端浏览器断开
+  - 能让我们跨请注时保持某参数，比如，在同一个session实例发出的，所有请求之间保持 cookie。
+  - 示例代码
+
+      ```python
+
+      创建 seesion对象，可以保持cookie值 
+
+      ss = requests.session()
+      headers = {'User-Agetn':'xxxxxxxxxxxxxxx'}
+      data = {'name':'xxxxxxxxxxxxxxx'}
+      此时发出的请求不用request,或者get之类，由创建的session管理请求
+
+      ss.post('https://baidu.com', data=data, headers=heaaders)
+
+      rsp = ss.get('xxxxxxxxxxx')
+      ```
+
+- https请求验证 ssl证书
+  - 参 verify 负责表示是否需要验证SSL证羽，默认是True
+  - 如果不需要验证SSL证书，则设置成False 表示关闭
+  - 案例：
+
+    ```python
+    rsp = requests.get('https://baidu.com', verify=False)
+    如果用 verify=True访问12306，则会报错，因为他证书有问题。
+    ```

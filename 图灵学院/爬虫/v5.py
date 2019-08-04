@@ -22,7 +22,7 @@ import json
 3、结果就应该是girl的释交
 '''
 
-baseurl = 'http://fanyi.baidu.com/sug'
+baseurl = 'https://fanyi.baidu.com/sug'
 
 # 存放用来模拟 form的数据，一定是 dict 格式
 data = {'kw':'girl'}   # 查询数据 girl 写成硬编码
@@ -48,12 +48,13 @@ print(type(json_data))
 print(json_data)
 
 # 把json字符串转化成字典
-json_data = json.load(json_data)
+json_data = json.loads(json_data)
 print(type(json_data))
 print(json_data)
 
+print('**********************************')
 
 for item in json_data['data']:
-    print(item['K'], '--', item['v'])
+    print(item['k'], '--', item['v'])
 
 
