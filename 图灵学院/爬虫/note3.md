@@ -16,6 +16,8 @@
   - 获取数据
   - 截屏
   - 安装：pip install selenium   带版本的  pip install selenium==2.48.0
+  - 官网：官网: http://selenium-python.readthedocs.io/index.html
 
 - PhantomJS
   - 基于webkit 的无界面的浏览器
+  - 官网：https://phantomjs.org/download.html
