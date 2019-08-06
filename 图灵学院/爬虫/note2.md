@@ -104,3 +104,74 @@
   - 解析HTML,案例v29
   - 文件读取,案例v30.html v31.py
   - etree 和 xpath 的配合使用，案例v32.py
+
+## CSS选择器 BeautifuSoup4
+
+- 现在使用 BeautifuSoup4
+- 安装 pip install beautifulsoup4
+- 官方文档：http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/
+- 几个常用提取信息工具的比较：
+  - 正则：很快，不好用，不用安装
+  - beautifulsoup: 慢，使用简单，安装简单
+  - lxml：较快，使用简单，安装一般
+- 案例v33.py
+
+### 四大对象
+
+- Tag
+- NavigableString
+- BeautifullSoup
+- Comment
+
+### Tag 
+
+- 对应html 中的标签
+- 可以通过 soup.tag_name 调用
+- tag两个重要属性
+  - name
+  - attrs
+- 案例v34.py
+
+### NavigableString
+
+- 对应内容值
+
+### BeautifulSoup
+
+- 表示的是一个文档内容，大部分可以把他当做 tag 对象
+- 一般我们可以用 soup表示
+
+### Comment
+
+- 特殊类型的NavigableString对象
+- 对其办输出，则内容不包括注释符号
+
+### 遍历文档对象
+
+- contents: Tag的子节点以列表的方式输出
+- children: 子节点以迭代器形式返回
+- descendants: 所有的子孙节点
+- string: 内容
+- 案例V34
+
+### 搜索文档对象
+
+- find_all(name, attrs, recursive, text, **kwargs)
+  - name: 按照哪个字符串搜索，可以传入的内容为：
+    - 字符串
+    - 正则表达式
+    - 列表
+  - kewwortd 参数，可以用来表示属性
+  - text: 对应tag的文本值
+  - 案例V34
+  
+### Css选择器
+
+- 使用soup.select，返回一个列表
+- 通过标签名称： soup.select('title')
+- 通过类名： soup.select('.content')
+- id 查找： soup.select('#nname_id')
+- 组合查找： soup.select('div #input_content')
+- 属性查找: soup.select('img[class='photo']')
+- 获取tag内容：tag.get_text
+- 案例v35
