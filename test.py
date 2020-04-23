@@ -19,3 +19,4 @@ data = response['rewards']
 for i in data:
     name = i['name']
     roles = i['roles']
+    print(i)
