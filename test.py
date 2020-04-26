@@ -3,7 +3,7 @@
 
 import requests
 
-url = 'https://codemart.com/api/project?'
+url = 'https://so.gushiwen.org/gushi/tangshi.aspx'
 
 headers = {
     'accept':'application/json',
