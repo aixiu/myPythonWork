@@ -4,8 +4,8 @@
 import requests
 import re
 
-url = 'https://so.gushiwen.org/gushi/tangshi.aspx'
-root_url = 'https://so.gushiwen.org'
+root_url = 'http://www.60addons.com'
+url = 'http://www.60addons.com/bbs/topic/module/42-1'
 
 headers = {
     'accept':'application/json',
@@ -19,26 +19,18 @@ response = requests.get(url, headers=headers).text
 # 提取诗歌连接
 # 规则， 要求，取舍
 
-poetry_urls = re.findall(r'<span><a href="(.*)" target="_blank">.*</a>\(.*\)</span>', response)
+poetry_urls = re.findall(r'<a class="tiezi" href="(.*)">.*</a>', response)
 
 # print(poetry_urls)
 
 # 获取数据
 for url in poetry_urls:
     poetry_html = requests.get(root_url + url).text
-    print(poetry_html)
+    # print(poetry_html)
 
-    # 正则（）提取数据
-    poetry_infos = re.findall(r'<textarea style=.*>(.*)——(.*)《(.*)》.*</textarea>', poetry_html)
-    # print(poetry_infos)
-
-    # 数据的调整
-    for i in poetry_infos:
-        poetry_content_A = i
-        # print(poetry_content_A)
-
-    poetry_content = '\n'.join((reversed(poetry_content_A)))
-    print(poetry_content)
-
-    with open('poetry.txt', 'a', encoding='utf-8') as f:
-        f.write('{}{}'.format(poetry_content, '\n\n'))
+#     # 正则（）提取数据
+    poetry_infos_A = re.findall(r'<h3>(.*)</h3>', poetry_html)
+    poetry_infos_B = re.findall(r'><p><a href=".*" rel="nofollow">.*</a> 密码:.*<br></p>', poetry_html)
+#     for i in poetry_infos_A:
+#         print(i)
+    print(poetry_infos_A, poetry_infos_B)
