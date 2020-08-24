@@ -29,13 +29,13 @@ home('aixiu')
 # 第一步，先将 @login 下边的函数名 home ，
 # 其实就是内存地址，做为参数传给了logo(func)的 func
 # 即把整个home函数当作参数传给了login  
-# 所以，内部就会去执行 inner 函数，最终返回login内部函数 inner 内存地址  
-# inner 接受 func 函数传进来的参数，并传递给 下边 func调用
 #  
 # 第二步，再将login返回的函数内存地址 inner
 # 重新赋值给了 @login 下边的函数名 home ,此时 home 函数,已经不是原来的 home 函数，而是一个新的 home 
 # 即：home = login(home) 所以最后调用 home() 时方法不变，却增加了函数 inner 里边的功能。
 
+# login 函数，返回内部函数 inner 内存地址，所以，内部就会去执行 inner 函数，  
+# 其实  home=inner ,inner 接受 func 函数传进来的参数，并传递给 下边 func调用
 
 # 有多个不同参数的调用案例
 
