@@ -21,13 +21,13 @@ if __name__ == '__main__':
     print("最终发送请求的URL：{0}".format(url))
 
     # 打开URL
-    # rsp = request.urlopen(url)
+    rsp = request.urlopen(url)
 
     # 读取网页内容
-    # html = rsp.read()
+    html = rsp.read()
 
-    # 将tytes类型内容转换为str类型内容
-    # html = html.decode("utf - 8")
+    # 将tybes类型内容转换为str类型内容
+    html = html.decode("utf - 8")
 
     # 打印最终网页内容
-    # print(html)
+    print(html)
