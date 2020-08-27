@@ -137,6 +137,12 @@ c =C()
 
 # Mixin 设计模式
     # 主要采用多继承方式对类的功能进行扩展
+    - 主要采用多继承方式对类的功能进行扩展
+    - [Mixin概念](https://www.zhihu.com/question/20778853)
+    - [MRO and Mixin](http://blog.csdn.net/robinjwong/article/details/48375833)
+    - [Mixin模式](https://www.cnblogs.com/xybaby/p/6484262.html)
+    - [Mixin MRO](http://runforever.github.io/2014-07-19/2014-07-19-python-mixin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/)
+    - [MRO](http://xiaocong.github.io/blog/2012/06/13/python-mixin-and-mro/)
 
 # 我们使用多继承语法来实现 Mixin
 # 使用 Mixin实现多继承的时候需非常小心
