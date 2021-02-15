@@ -68,14 +68,16 @@ print('{} asked {} to do something'.format('lili', 'egon'))  # lili asked egon t
 
 # 使用索引取对应位置的值
 print('{0}{0}{1}{0}'.format('x','y')) # xxyx
-2.3 使用关键字参数or字典
+
+# 2.3 使用关键字参数or字典
 
 # 可以通过关键字or字典方式的方式格式化，打破了位置带来的限制与困扰
 print('我的名字是 {name}, 我的年龄是 {age}.'.format(age=18, name='egon'))
 
 kwargs = {'name': 'egon', 'age': 18}
 print('我的名字是 {name}, 我的年龄是 {age}.'.format(**kwargs)) # 使用**进行解包操作
-2.4 填充与格式化
+
+# 2.4 填充与格式化
 
 # 先取到值,然后在冒号后设定填充格式：[填充字符][对齐方式][宽度]
 
@@ -87,7 +89,8 @@ print('{0:*>10}'.format('开始执行')) # ******开始执行
 
 # *^10：居中显示，总共10个字符，不够的用*号填充
 print('{0:*^10}'.format('开始执行')) # ***开始执行***
-2.5 精度与进制
+
+# 2.5 精度与进制
 
 print('{salary:.3f}'.format(salary=1232132.12351))  #精确到小数点后3位，四舍五入，结果为：1232132.124
 print('{0:b}'.format(123))  # 转成二进制，结果为：1111011
@@ -107,7 +110,9 @@ name = 'egon'
 age = 18
 print(f'{name} {age}')  # egon 18
 print(F'{age} {name}')  # 18 egon
-3.2 {}中可以是表达式
+
+
+# 3.2 {}中可以是表达式
 
 # 可以在{}中放置任意合法的Python表达式，会在运行时计算
 # 比如：数学表达式
