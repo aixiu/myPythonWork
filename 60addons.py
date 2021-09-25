@@ -23,7 +23,7 @@ poetry_urls = re.findall(r'<a class="tiezi" href="(.*)">.*</a>', response)
 
 # print(poetry_urls)
 
-# 获取数据
+# 获取数据`
 for url in poetry_urls:
     poetry_html = requests.get(root_url + url).text
     # print(poetry_html)
